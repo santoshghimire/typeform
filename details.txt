@@ -1,0 +1,8 @@
+Create a new script to parse Typeform json data and upload it to google sheet
+
+1) Create a function that will accept a payload json data (example json data is in sample_response.json)
+2) Make a request to this url https://api.typeform.com/v1/form/njxhSJ?key=cd3c5967bd6331d8fdbe134f81cc9accfdeecfc4 and use the response to get "question text" for each field id in payload json data.
+3) Construct a row data from the above two json response. See attached Simplified MVP spreadsheet, tab TF data (line 27 onwards).
+4) Append the row to google sheet id 1brAVs0c-Vzm5AEVBNaEWe3O4_9JfuIImv0XVIrbFt74 tab TF data last line.
+
+http://requestb.in/11w6swc1?inspect
