@@ -3,11 +3,12 @@ from django.views.generic import View
 from django.http import HttpResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
+import json
 
 from .typeform import tf_load_data
+from .models import FormResponse
 
 
 class Index(View):
@@ -34,4 +35,6 @@ class Api(APIView):
         d = tf_load_data(answers_json=data)
         status = 'ok' if d else 'error'
         response = {'status': status}
+        resp = FormResponse(text=json.dumps(data))
+        resp.save()
         return Response(response)

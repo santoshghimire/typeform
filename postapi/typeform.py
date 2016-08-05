@@ -181,8 +181,8 @@ def tf_load_data(json_file_path=None, answers_json=None):
     row.append( answers_json['form_response']['submitted_at'].replace('Z','').replace('T',' ') ) # submit date
     row.append( answers_json['event_id'] ) # network id
 
-    # sheet = Sheets(spreadsheetId = '1brAVs0c-Vzm5AEVBNaEWe3O4_9JfuIImv0XVIrbFt74', #  test
-    sheet = Sheets(spreadsheetId = '1M00WGCdkA49JbprZ631t3Dbr1tBIDvTXvLDBjEutI_A',   # prod
+    sheet = Sheets(spreadsheetId = '1brAVs0c-Vzm5AEVBNaEWe3O4_9JfuIImv0XVIrbFt74', #  test
+    # sheet = Sheets(spreadsheetId = '1M00WGCdkA49JbprZ631t3Dbr1tBIDvTXvLDBjEutI_A',   # prod
             client_secret_file = 'client_secret.json',
             application_name = 'FinancialData',
             sheet_name = 'TF data')
