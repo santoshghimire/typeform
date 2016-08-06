@@ -32,9 +32,10 @@ class Api(APIView):
 
     def post(self, request, format=".json"):
         data = request.data
+        resp = FormResponse(text=json.dumps(data))
+        resp.save()
+
         d = tf_load_data(answers_json=data)
         status = 'ok' if d else 'error'
         response = {'status': status}
-        resp = FormResponse(text=json.dumps(data))
-        resp.save()
         return Response(response)
